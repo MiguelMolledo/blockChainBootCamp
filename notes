@@ -1,0 +1,30 @@
+To start building a react project you must USE 
+
+1
+	npx  create-react-app  YOUR-name
+
+2
+	updagrade package.json dependencies key with everything in 
+	https://gist.github.com/gwmccubbin/fb80787126657d3274584ffb3d415650
+
+3 
+	install hardhat  >> npx hardhat 
+
+
+4
+	initialize Hardhat >> npx hardhat node
+	
+5 
+	when creating contracts we need to specify hardhat.config.js values
+
+	networks: {localHost: {url: "OUR LOCAL URL SHOWN IN >> npx hardhat node"}}
+
+6
+	COMPILE
+		>> npx hardhat compile
+
+7  HARDHAT run scripts
+	>> npx hardhat run --network localhost ./scripts/1_deploy.js
+
+8 HARDHAT CONSOLE
+	>> npx hardhat console --network localhost
