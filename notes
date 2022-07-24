@@ -28,3 +28,7 @@ To start building a react project you must USE
 
 8 HARDHAT CONSOLE
 	>> npx hardhat console --network localhost
+
+
+
+
