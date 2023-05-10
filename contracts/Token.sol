@@ -44,17 +44,7 @@ contract Token {
 	    returns (bool success)
 	    {
 
-	    	// if (balanceOf[msg.sender] > _value)){
-
-	    	// }
-	    	require( balanceOf[msg.sender] >= _value);
-	    	require(_to != address(0));
-
-	    	balanceOf[msg.sender] = balanceOf[msg.sender] - _value;
-	    	balanceOf[_to] =  balanceOf[_to] + _value;
-	    	
-	    	// emit Event
-	    	emit Transfer(msg.sender, _to, _value);
+	    	_transfer(msg.sender, _to, _value);
 	    	return true;
 
 	    }
@@ -73,5 +63,34 @@ contract Token {
 			return true;
 
 		}
+
+	function _transfer(address _from, address _to, uint256 _value)
+		internal
+		{
+			require( balanceOf[_from] >= _value);
+			require(_to != address(0));
+	    	balanceOf[_from] = balanceOf[_from] - _value;
+	    	balanceOf[_to] =  balanceOf[_to] + _value;
+	    	// emit Event
+	    	emit Transfer(_from, _to, _value);
+		}
+
+	function transferFrom(address _from, address _to, uint256 _value)
+		public returns (bool success)
+		{
+
+			// Check Approval
+			// require()
+			require(_value <= allowance[_from][msg.sender]);
+			_transfer(_from, _to, _value);
+			allowance[_from][msg.sender] = allowance[_from][msg.sender] - _value;
+			return true;
+			// Spend Tolens
+
+		
+
+
+		}
+
 
 }
