@@ -81,7 +81,7 @@ contract Token {
 
 			// Check Approval
 			// require()
-			require(_value <= allowance[_from][msg.sender]);
+			require(_value <= allowance[_from][msg.sender], 'Amount to transfer not allowed');
 			_transfer(_from, _to, _value);
 			allowance[_from][msg.sender] = allowance[_from][msg.sender] - _value;
 			return true;

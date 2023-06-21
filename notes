@@ -30,7 +30,8 @@ To start building a react project you must USE
 	>> npx hardhat console --network localhost
 
 
-
+9 To run Hardhat tests
+	>> npx hardhat test test/Exchange.js or just use test as folder
 
 
 
