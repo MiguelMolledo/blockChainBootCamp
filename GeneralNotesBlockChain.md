@@ -60,7 +60,23 @@ struct YourStruct {
 	>> foundryup
 	>> anvil
  	>> forge
-  		forge test --match-test <nameTestbyregularExp> -fork-url sepolia/mainet/ url
-    		forge build 
+	   forge test --match-test <nameTestbyregularExp> -fork-url sepolia/mainet/ url -vv (levels of logging) 
+	   forge build
+    
+### broadCast
+```solidity
+vm.startBroadcast();
+// your Code
+vm.stopBroadcast();
+```
+Remember It cannot exist two broadcasts at the same time. be careful with dependencies 
  
 
+### Testing 
+``` solidity
+import {Test, console} from "forge-std/Test.sol";
+// Asserts 
+assertEq
+assertFalse
+
+```
