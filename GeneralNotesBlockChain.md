@@ -18,10 +18,10 @@
 # Important notes when developing
 
 ## Folders
-	src > current smart contracts
-	scripts > scripts to deploy or get config files
-	Test  > To develop all de Tests
-		mocks > To fake contracts that are not existing in our local test env
+* src > Current smart contracts
+* scripts > scripts to deploy or get config files
+* Test  > To develop all de Tests
+   * mocks > To fake contracts that are not existing in our local test env
 
 
 ## NICE stuff to Remember
@@ -31,10 +31,21 @@
 3. Pure function declares that no state variable will be changed or read.
 4. View function declares that no state will be changed.
 
+## Specific Solidity Statements
 
+### Pure Methods
+* Pure function declares that no state variable will be changed or read.
 
+### view Methods
+* View function declares that no state will be changed.
 
-## Code Example  
+### Internal 
+* The internal visibility specifier restricts access to the current contract and any contracts that inherit from it.
+* State variables declared as internal can be accessed by the contract itself and its derived contracts (child contracts).
+* Functions declared as internal can only be called from within the contract itself and its derived contracts (through inheritance).
+
+### Private
+* The private visibility specifier restricts access to only the current contract.
 
 ### STRUCTS
 ```solidity
@@ -43,3 +54,13 @@ struct YourStruct {
 	address MyAddress;
 }
 ```
+
+## Foundry Tips
+### shell commands
+	>> foundryup
+	>> anvil
+ 	>> forge
+  		forge test --match-test <nameTestbyregularExp> -fork-url sepolia/mainet/ url
+    		forge build 
+ 
+
