@@ -80,3 +80,12 @@ assertEq
 assertFalse
 
 ```
+### using *stateMent* 
+```solidity
+library customLibrary {
+	function newFunction() public {}
+}
+
+
+using customLibrary for uint256;
+```
